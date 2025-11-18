@@ -33,6 +33,9 @@ export function ProductList() {
     setFilteredProducts(products);
   }
 
+  console.log("Products from supabase:", products);
+
+
   return (
     <div className={styles.container}>
       <div className={styles.searchContainer}>
