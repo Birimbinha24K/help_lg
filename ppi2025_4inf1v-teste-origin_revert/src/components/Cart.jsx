@@ -16,9 +16,9 @@ export function Cart() {
         <ul>
           {cart.map((product, index) => (
             <li key={index} className={styles.cartItem}>
-              <img src={product.thumbnail} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>${product.price.toFixed(2)}</p>
+              <img src={product.thumbnail || "https://via.placeholder.com/150"} alt={product.title || "No title"} />
+              <h3>{product.title || "No title"}</h3>
+              <p>${(product.price !== undefined && !isNaN(Number(product.price)) ? Number(product.price).toFixed(2) : "0.00")}</p>
               <div className={styles.quantityControls}>
                 <button
                   disabled={product.quantity <= 1}
