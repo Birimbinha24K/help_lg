@@ -12,6 +12,20 @@
   color: var(--primary);
   margin-bottom: 1rem;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15rem;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.container h1 {
+  font-size: 4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
 
 .userInfo{
   display: flex;
@@ -36,4 +50,137 @@
 
 .button:hover {
   background-color: var(--primary-dark);
+}
+
+/* Admin product form styles (inspired by Login card) */
+.adminCard {
+  width: 100%;
+  max-width: 640px;
+  background: var(--background);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 0.25rem var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.adminFormField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.adminInput, .adminTextarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 0.25rem solid var(--gray-400);
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  background-color: var(--background);
+  color: var(--text);
+}
+.adminTextarea {
+  height: 9rem; /* tamanho fixo para descrição */
+  max-height: 9rem;
+  min-height: 9rem;
+  resize: none; /* impede redimensionamento pelo usuário */
+  overflow: auto;
+}
+.adminInput:focus, .adminTextarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem var(--primary-light);
+}
+.adminActions { display:flex; gap:0.75rem; align-items:center; justify-content: center; margin-top:0.5rem }
+/* classe para centralizar ações de remoção no formulário */
+.removeActions { display:flex; gap:0.5rem; margin-top:0.5rem; justify-content: center; width: 100%; }
+.adminTitle { font-size:1.6rem; color:var(--primary); margin:0 }
+
+.adminToggle { display:flex; gap:0.5rem }
+.adminToggle .button { padding: 0.65rem 1rem; font-size: 1.4rem }
+.adminToggle { margin-left: 1rem }
+.adminFormField { margin-top: 0.5rem }
+.adminSelect {
+  padding: 0.75rem 1rem;
+  border: 0.25rem solid var(--gray-400);
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  background-color: var(--background);
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.adminCard > .adminActions .button { min-width: 140px }
+
+/* Estilo específico para centralizar o botão de logout na página de usuário */
+.signOut {
+  display: block;
+  margin: 1.25rem auto 0; /* topo, centralizado horizontalmente, sem margem inferior */
+}
+
+/* Welcome header */
+.welcomeHeader {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.welcomeTitle {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin: 0;
+  opacity: 0.95;
+}
+.welcomeName {
+  font-size: 2rem;
+  color: var(--text);
+  margin-top: 0.25rem;
+  font-weight: 700;
+}
+
+/* User info card */
+.userCard {
+  width: 100%;
+  max-width: 640px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  padding: 1rem 1.25rem;
+  border-radius: 0.85rem;
+  border: 0.08rem solid rgba(244,144,151,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+  box-shadow: 0 0 0 0.25rem var(--primary-light), 0 0 1.25rem 0.18rem var(--primary);
+}
+.userCard:hover {
+  box-shadow: 0 0 0 0.32rem var(--primary-light), 0 0 1.5rem 0.25rem var(--primary);
+}
+.userField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  background: transparent;
+  border-radius: 0.6rem;
+  border: 0.04rem solid rgba(244,144,151,0.03);
+}
+.userLabel {
+  color: var(--primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.userValue {
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.adminBadge {
+  background: var(--primary);
+  color: var(--gray-900);
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  box-shadow: 0 0 1rem 0.25rem var(--primary);
+  font-weight: 800;
+}
+.userTag {
+  color: var(--gray-700);
+  font-weight: 600;
 }

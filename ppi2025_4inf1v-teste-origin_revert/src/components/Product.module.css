@@ -1,24 +1,35 @@
 .productCard {
   border: 0.25rem solid var(--primary);
-  border-radius: 5rem;
-  padding: 2rem;
-  text-align: center;
+  border-radius: 1rem;
+  padding: 1.5rem;
   background-color: var(--gray-100);
   max-width: 32rem;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .productImage {
   width: 100%;
   max-width: 30rem;
+  height: 180px;
+  object-fit: cover;
   border-radius: 0.5rem;
 }
 
 .productTitle {
   font-size: 3rem;
   font-weight: bold;
+  /* truncate long descriptions to keep cards same height */
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   margin: 0.5rem 0;
 }
 
@@ -30,7 +41,7 @@
 .productPrice {
   font-size: 2rem;
   font-weight: bold;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .productButton {

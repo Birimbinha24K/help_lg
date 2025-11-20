@@ -8,6 +8,7 @@ import { CartProvider } from "./context/CartContext";
 import { Login } from "./components/Login";
 import { ToastContainer } from "react-toastify";
 import { User } from "./components/User";
+import Admin from "./components/Admin";
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/signin" element={<Login value="signin" />} />
           <Route path="/register" element={<Login value="register" />} />
           <Route path="/user" element={<User />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </CartProvider>
     </>

@@ -6,7 +6,7 @@ import { CartContext } from "../context/CartContext";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
-  const { cart, session } = useContext(CartContext);
+  const { cart, session, userProfile, isAdmin } = useContext(CartContext);
 
   return (
     <div className={styles.container}>
@@ -16,7 +16,7 @@ export function Header() {
         </Link>
         {session && (
           <Link to="/user" className={styles.welcomeMessage}>
-            Welcome, {session.user.user_metadata.username} {session.user.user_metadata.admin && '⭐'}
+            Welcome, {userProfile?.username ?? session.user.user_metadata?.username} {isAdmin && '⭐'}
           </Link>
         )}
       </div>
