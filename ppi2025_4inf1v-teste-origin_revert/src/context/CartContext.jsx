@@ -336,9 +336,12 @@ export function CartProvider({ children }) {
           ...(row.products ?? {}),
         }));
         setCart(remoteCart);
+        console.debug("Loaded remote cart:", remoteCart);
+        return remoteCart;
       }
     } catch (err) {
-      // ignore load errors
+      console.error("Error loading cart from DB:", err);
+      return null;
     }
   }
 
@@ -359,8 +362,11 @@ export function CartProvider({ children }) {
 
       const { error: insError } = await supabase.from("cart").insert(rows);
       if (insError) throw insError;
+      console.debug("Synced cart to DB for user", userId, rows);
+      return true;
     } catch (err) {
-      // ignore sync errors
+      console.error("Error syncing cart to DB:", err);
+      return false;
     }
   }
 
