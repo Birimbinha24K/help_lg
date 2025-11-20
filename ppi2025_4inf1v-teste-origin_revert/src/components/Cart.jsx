@@ -9,16 +9,16 @@ export function Cart() {
 
   return (
     <div className={styles.cart}>
-      <h2>Shopping Cart</h2>
+      <h2>Carrinho</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>Seu carrinho está vazio.</p>
       ) : (
         <ul>
           {cart.map((product, index) => (
             <li key={index} className={styles.cartItem}>
               <img src={product.thumbnail || "https://via.placeholder.com/150"} alt={product.title || "No title"} />
               <h3>{product.title || "No title"}</h3>
-              <p>${(product.price !== undefined && !isNaN(Number(product.price)) ? Number(product.price).toFixed(2) : "0.00")}</p>
+              <p>R$ {(product.price !== undefined && !isNaN(Number(product.price)) ? Number(product.price).toFixed(2) : "0.00")}</p>
               <div className={styles.quantityControls}>
                 <button
                   disabled={product.quantity <= 1}
@@ -49,7 +49,7 @@ export function Cart() {
       )}
       {cart.length > 0 && (
         <button onClick={clearCart} className={styles.removeButton}>
-          CLEAR CART <Trash />
+          LIMPAR CARRINHO <Trash />
         </button>
       )}
     </div>

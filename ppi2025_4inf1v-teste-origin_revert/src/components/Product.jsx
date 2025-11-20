@@ -15,7 +15,7 @@ export function Product({ product }) {
       />
       <h2 className={styles.productTitle}>{product.title}</h2>
       <p className={styles.productDescription}>{product.description}</p>
-      <p className={styles.productPrice}>${product.price}</p>
+      <p className={styles.productPrice}>R$ {product.price}</p>
       {/* <Link to="/cart"> */}
       <button
         onClick={() => {
@@ -23,7 +23,7 @@ export function Product({ product }) {
         }}
         className={styles.productButton}
       >
-        ADD TO CART
+        Adicionar ao Carrinho
       </button>
       {/* </Link> */}
     </div>

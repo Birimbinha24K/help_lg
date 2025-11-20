@@ -16,7 +16,7 @@ export function Header() {
         </Link>
         {session && (
           <Link to="/user" className={styles.welcomeMessage}>
-            Welcome, {userProfile?.username ?? session.user.user_metadata?.username} {isAdmin && '⭐'}
+            Bem-vindo, {userProfile?.username ?? session.user.user_metadata?.username} {isAdmin && '⭐'}
           </Link>
         )}
       </div>
@@ -25,10 +25,10 @@ export function Header() {
         {!session && (
           <>
             <Link to="/signin" className={styles.link}>
-              Sign In
+              Entrar
             </Link>
             <Link to="/register" className={styles.link}>
-              Register
+              Registrar
             </Link>
           </>
         )}
@@ -45,7 +45,7 @@ export function Header() {
             </div>
 
             <p>
-              Total: ${" "}
+              Total: R${" "}
               {cart
                 .reduce(
                   (total, product) => total + product.price * product.quantity,

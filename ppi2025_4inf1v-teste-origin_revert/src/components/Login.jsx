@@ -32,7 +32,7 @@ export function Login({ value }) {
   const [showPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState({
     email: "",
-    password: "",
+    senha: "",
     confirmPassword: "",
     username: "",
   });
@@ -92,14 +92,14 @@ export function Login({ value }) {
     // Basic validation
     // TODO: Buscar por REGEXP 
     const newErrors = {};
-    if (!formValues.email) newErrors.email = "Email is required";
-    if (!formValues.password) newErrors.password = "Password is required";
+    if (!formValues.email) newErrors.email = "Email é necessario";
+    if (!formValues.password) newErrors.password = "Password é necessario";
     if (mode === "register") {
-      if (!formValues.username) newErrors.username = "Username is required";
+      if (!formValues.username) newErrors.username = "Nome de usuário é necessario";
       if (!formValues.confirmPassword)
-        newErrors.confirmPassword = "Confirm Password is required";
+        newErrors.confirmPassword = "Confirmar senha é necessario";
       if (formValues.password !== formValues.confirmPassword)
-        newErrors.confirmPassword = "Passwords do not match";
+        newErrors.confirmPassword = "Senhas não coincidem";
     }
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
@@ -154,7 +154,7 @@ export function Login({ value }) {
 
         {mode === "register" && (
           <Field.Root name="username" className={styles.field}>
-            <Field.Label className={styles.label}>Username</Field.Label>
+            <Field.Label className={styles.label}>Nome de Usuário</Field.Label>
             <Field.Control
               type="text"
               name="username"
@@ -169,7 +169,7 @@ export function Login({ value }) {
         )}
 
         <Field.Root name="password" className={styles.field}>
-          <Field.Label className={styles.label}>Password</Field.Label>
+          <Field.Label className={styles.label}>Senha</Field.Label>
           <div className={styles.inputWrapper}>
             <Field.Control
               type={showPassword ? "text" : "password"}
@@ -196,7 +196,7 @@ export function Login({ value }) {
 
         {mode === "register" && (
           <Field.Root name="confirmPassword" className={styles.field}>
-            <Field.Label className={styles.label}>Confirm Password</Field.Label>
+            <Field.Label className={styles.label}>Confirmar Senha</Field.Label>
             <div className={styles.inputWrapper}>
               <Field.Control
                 type={showPassword ? "text" : "password"}
@@ -244,12 +244,12 @@ export function Login({ value }) {
       </Form>
       {mode === "register" && (
         <button onClick={() => setMode("signin")} className={styles.info}>
-          Already have an account? Click here!
+          Já tem uma conta? Clique aqui!
         </button>
       )}
       {mode === "signin" && (
         <button onClick={() => setMode("register")} className={styles.info}>
-          Don't have an account? Click here!
+          Não tem uma conta? Clique aqui!
         </button>
       )}
     </div>

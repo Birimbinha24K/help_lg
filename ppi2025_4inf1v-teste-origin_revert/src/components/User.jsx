@@ -133,7 +133,7 @@ export function User() {
             )}
 
           <button className={`${styles.button} ${styles.signOut}`} onClick={handleSignOut}>
-            SIGN OUT
+            SAIR DA CONTA
           </button>
 
         </div>

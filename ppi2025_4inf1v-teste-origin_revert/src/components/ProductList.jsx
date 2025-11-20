@@ -42,12 +42,12 @@ export function ProductList() {
         <input
           ref={searchInput}
           type="text"
-          placeholder="Search products..."
+          placeholder="Procurar produtos..."
           className={styles.searchInput}
           onChange={handleSearch}
         />
         <button className={styles.searchButton} onClick={handleClear}>
-          CLEAR
+          Limpar
         </button>
       </div>
       <div className={styles.productList}>
@@ -62,7 +62,7 @@ export function ProductList() {
             style={{ margin: "2rem auto", display: "block" }}
             sx={{ color: "#001111" }}
           />
-          <p>Loading products...</p>
+          <p>Carregando Produtos...</p>
         </div>
       )}
       {error && <p>❌ {error}</p>}
